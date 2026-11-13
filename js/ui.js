@@ -7,6 +7,7 @@ function render(){
   pn.textContent=p[0];pd.textContent=p[1];drawScreen();pl.href=P[cur].l;
   if(P[cur].all){pl.textContent=d.all;pl.target='_self'}else pl.target='_blank';
   pr.href=P[cur].repo||'#';pr.style.display=(P[cur].all||!P[cur].repo)?'none':'';
+  document.querySelectorAll('[data-cv]').forEach(a=>a.href=lang==='pt'?'cv/Paulo-Cezar-Curriculo-PT.docx':'cv/Paulo-Cezar-Resume-EN.docx');
   try{localStorage.setItem('lang',lang)}catch(e){}
   pt.innerHTML=P[cur].t.map(t=>`<span>${t}</span>`).join('');
   cnt.textContent=`0${cur+1} / 0${P.length}`;prog.style.width=((cur+1)/P.length*100)+'%';
